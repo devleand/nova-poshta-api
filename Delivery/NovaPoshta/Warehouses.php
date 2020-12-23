@@ -3,7 +3,7 @@
     namespace Delivery\NovaPoshta;
 
 
-    class Warehouses extends Models\AddressGeneral
+    class Warehouses extends Models\AddressGeneral implements \Delivery\NovaPoshta\API\NovaPoshtaAPIGet
     {
         /**
          * @inheritDoc

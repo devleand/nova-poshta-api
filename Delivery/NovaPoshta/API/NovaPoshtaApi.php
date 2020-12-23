@@ -36,7 +36,7 @@
         protected $model;
 
         /**
-         * @var string Set method of current model
+         * @var string Set "main" method of current model
          */
         protected $method;
 
@@ -331,23 +331,5 @@
             }
 
             return $this->execute();
-        }
-
-        /**
-         * Get only link on internet document for printing.
-         *
-         * @param string       $method       Called method of NovaPoshta API
-         * @param array|string $documentRefs Array of Documents IDs
-         * @param string       $type         (pdf|html|html_link|pdf_link)
-         *
-         * @return string
-         */
-        final protected function printGetLink($method, $documentRefs, $type)
-        {
-            $key = $this->getKey();
-            $orders = is_array($documentRefs) ? implode(',', $documentRefs) : (string) $documentRefs;
-            $type = str_replace('_link', '', $type);
-
-            return "https://my.novaposhta.ua/orders/$method/orders[]/$orders/type/$type/apiKey/$key";
         }
     }

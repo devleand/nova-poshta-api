@@ -2,7 +2,7 @@
 
     namespace Delivery\NovaPoshta;
 
-    class Areas extends Models\Address
+    class Areas extends Models\Address implements \Delivery\NovaPoshta\API\NovaPoshtaAPIGet
     {
         /**
          * @inheritDoc

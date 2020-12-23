@@ -3,7 +3,7 @@
     namespace Delivery\NovaPoshta\Models;
 
 
-    abstract class AddressGeneral extends \Delivery\NovaPoshta\API\NovaPoshtaApi implements \Delivery\NovaPoshta\API\NovaPoshtaAPIGet
+    abstract class AddressGeneral extends \Delivery\NovaPoshta\API\NovaPoshtaApi
     {
         /**
          * @inheritDoc

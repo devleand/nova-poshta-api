@@ -2,7 +2,7 @@
 
     namespace Delivery\NovaPoshta;
 
-    class Towns extends Models\AddressGeneral
+    class Towns extends Models\AddressGeneral implements \Delivery\NovaPoshta\API\NovaPoshtaAPIGet
     {
         /**
          * @inheritDoc

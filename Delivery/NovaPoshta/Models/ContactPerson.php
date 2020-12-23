@@ -2,23 +2,30 @@
 
     namespace Delivery\NovaPoshta\Models;
 
-
-    abstract class ContactPerson extends \Delivery\NovaPoshta\API\NovaPoshtaApi implements \Delivery\NovaPoshta\API\NovaPoshtaApiSUD
+    abstract class ContactPerson extends \Delivery\NovaPoshta\API\NovaPoshtaApi
     {
         protected $model = 'ContactPerson';
 
         /**
-         * @inheritDoc
+         * Save method of current model
+         *
+         * @param array $params
+         *
+         * @return array|null
          */
-        public function save($params)
+        protected function save($params)
         {
             return $this->request($this->getModel(), 'save', $params);
         }
 
         /**
-         * @inheritDoc
+         * Update method of current model
+         *
+         * @param array $params
+         *
+         * @return array|null
          */
-        public function update($params)
+        protected function update($params)
         {
             return $this->request($this->getModel(), 'update', $params);
         }
@@ -30,7 +37,7 @@
          *
          * @return array
          */
-        public function delete($ref)
+        protected function delete($ref)
         {
             return $this->request($this->getModel(), 'delete', [
                 'Ref' => $ref
