@@ -22,19 +22,23 @@
         /**
          * Print method of current model.
          *
-         * @param   string    $refs   Array of Documents IDs
-         * @param   string    $type   (pdf|html|html_link|pdf_link)
+         * @param   string          $refs       Array of Documents IDs
+         * @param   string          $type       (pdf|html|html_link|pdf_link)
+         * @param   string|null     $method     API method
          *
          * @return  mixed
          */
-        protected function printGet($refs, $type)
+        protected function printGet($refs, $type, $method = null)
         {
+            if (is_null($method)) {
+                $method = $this->getPrintMethod();
+            }
             // If needs link
-            if ('html_link' == $type || 'pdf_link' == $type) {
-                return $this->printGetLink($this->getPrintMethod(), $refs, $type);
+            if (strripos($type, '_link') !== false) {
+                return $this->printGetLink($method, $refs, $type);
             }
             // If needs data
-            return $this->printGetData($this->getPrintMethod(), [ $refs ], $type);
+            return $this->printGetData($method, [ $refs ], $type);
         }
 
         /**
@@ -42,7 +46,7 @@
          *
          * @param   string    $method     Called method of NovaPoshta API
          * @param   string    $refs       Array of Documents IDs
-         * @param   string    $type       (pdf|html|html_link|pdf_link)
+         * @param   string    $type       (html_link|pdf_link)
          *
          * @return  string
          */
@@ -53,7 +57,7 @@
          *
          * @param   string  $method    Called method of NovaPoshta API
          * @param   array   $refs      Array of Documents IDs
-         * @param   string  $type      (pdf|html|html_link|pdf_link)
+         * @param   string  $type      (pdf|html)
          *
          * @return  mixed
          */

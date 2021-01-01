@@ -38,7 +38,7 @@
          *
          * @return array
          */
-        protected function getDocument($ref)
+        public function getDocument($ref)
         {
             return $this->request($this->getModel(), 'getDocument', [
                 'Ref' => $ref,
@@ -97,7 +97,7 @@
          *
          * @param string       $method       Called method of NovaPoshta API
          * @param array|string $documentRefs Array of Documents IDs
-         * @param string       $type         (pdf|html|html_link|pdf_link)
+         * @param string       $type         (html_link|pdf_link)
          *
          * @return string
          */
@@ -107,7 +107,7 @@
             $orders = is_array($documentRefs) ? implode(',', $documentRefs) : (string) $documentRefs;
             $type = str_replace('_link', '', $type);
 
-            return "https://my.novaposhta.ua/orders/$method/orders[]/$orders/type/$type/apiKey/$key";
+            return "https://my.novaposhta.ua/orders/$method/orders/$orders/type/$type/apiKey/$key";
         }
 
         /**
@@ -115,7 +115,7 @@
          *
          * @param   string  $method    Called method of NovaPoshta API
          * @param   array   $refs      Array of Documents IDs
-         * @param   string  $type      (pdf|html|html_link|pdf_link)
+         * @param   string  $type      (pdf|html)
          *
          * @return  array|null
          */
@@ -125,20 +125,16 @@
         }
 
         /**
-         * printMarkings method of current model.
+         * printMarking method of current model.
          *
-         * @param array|string $refs        Array of Documents IDs
-         * @param string       $type        (pdf|new_pdf|new_html|old_html|html_link|pdf_link)
+         * @param array|string  $refs        Array of Documents IDs
+         * @param string        $type        (pdf|html|html_link|pdf8_link)
+         * @param string        $size        (100|85)
          *
          * @return mixed
          */
-        protected function printMarkings($refs, $type)
+        public function printMarkings($refs, $type, $size = '100')
         {
-            // If needs link
-            if ('html_link' == $type || 'pdf_link' == $type) {
-                return $this->printGetLink('printMarkings', $refs, $type);
-            }
-            // If needs data
-            return $this->printGetData('printMarkings', [ $refs ], $type);
+            return $this->printGet($refs, $type, "printMarking{$size}x{$size}");
         }
     }

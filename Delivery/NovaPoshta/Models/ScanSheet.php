@@ -26,7 +26,7 @@
          *
          * @throws \Exception
          */
-        protected function insertDocuments($docRefs, $registerData = null)
+        public function insertDocuments($docRefs, $registerData = null)
         {
             if (!is_array($docRefs)) {
                 return $this->prepare([
@@ -71,7 +71,7 @@
          *
          * @return array|null
          */
-        protected function getScanSheet($ref, $counterpartyRef = null)
+        public function getScanSheet($ref, $counterpartyRef = null)
         {
             $data = [
                 'Ref' => $ref
@@ -129,7 +129,7 @@
          *
          * @throws \Exception
          */
-        protected function removeDocuments($ref, $docRefs)
+        public function removeDocuments($ref, $docRefs)
         {
             return $this->request($this->getModel(), 'removeDocuments', [
                 'Ref'           => $ref,
@@ -145,6 +145,7 @@
          */
         protected function printGetLink($method, $ref, $type)
         {
+            $ref = is_array($ref) ? implode(',', $ref) : (string)$ref;
             return "https://my.novaposhta.ua/scanSheet/$method/refs[]/$ref/type/".str_replace('_link', '', $type)."/apiKey/{$this->getKey()}";
         }
 

@@ -48,20 +48,4 @@
         {
             return $this->getCounterpartyContactPersons($params);
         }
-
-        /**
-         * @inheritDoc
-         */
-        public function getCounterpartyOptions($ref)
-        {
-            return parent::getCounterpartyOptions($ref);
-        }
-
-        /**
-         * @inheritDoc
-         */
-        public function getCounterpartyAddresses($ref, $page = 1)
-        {
-            return parent::getCounterpartyAddresses($ref, $page);
-        }
     }

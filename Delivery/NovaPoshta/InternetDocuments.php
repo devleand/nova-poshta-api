@@ -10,7 +10,7 @@
          */
         public function get($isUsePageCounter = false)
         {
-            return parent::getDocumentList($isUsePageCounter);
+            return $this->getDocumentList($isUsePageCounter);
         }
 
         /**
@@ -43,21 +43,5 @@
         public function _print($refs, $type)
         {
             return $this->printGet($refs, $type);
-        }
-
-        /**
-         * @inheritDoc
-         */
-        public function getDocument($ref)
-        {
-            return parent::getDocument($ref);
-        }
-
-        /**
-         * @inheritDoc
-         */
-        public function printMarkings($refs, $type)
-        {
-            return parent::printMarkings($refs, $type);
         }
     }

@@ -41,7 +41,7 @@
          *
          * @return array
          */
-        protected function getCounterpartyOptions($ref)
+        public function getCounterpartyOptions($ref)
         {
             return $this->request($this->getModel(), 'getCounterpartyOptions', ['Ref' => $ref]);
         }
@@ -54,7 +54,7 @@
          *
          * @return array
          */
-        protected function getCounterpartyAddresses($ref, $page = 1)
+        public function getCounterpartyAddresses($ref, $page = 1)
         {
             return $this->request($this->getModel(), 'getCounterpartyAddresses', ['Ref' => $ref, 'Page' => $page]);
         }
