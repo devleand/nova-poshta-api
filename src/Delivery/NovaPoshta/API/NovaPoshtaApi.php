@@ -56,7 +56,7 @@
          * @param string $key            NovaPoshta API key
          * @param string $language       Default Language
          * @param bool   $throwErrors    Throw request errors as Exceptions
-         * @param bool   $connectionType Connection type (curl | file_get_contents)
+         * @param string $connectionType Connection type (curl | file_get_contents)
          *
          * @return $this
          */

@@ -3,7 +3,7 @@
     namespace Delivery\NovaPoshta;
 
 
-    class Counterparties extends Models\Counterparty implements \Delivery\NovaPoshta\API\NovaPoshtaAPIGet, \Delivery\NovaPoshta\API\NovaPoshtaApiSUD
+    class Counterparties extends Models\Counterparty implements \Delivery\NovaPoshta\API\NovaPoshtaApiGet, \Delivery\NovaPoshta\API\NovaPoshtaApiSUD
     {
         /**
          * @inheritDoc

@@ -2,7 +2,7 @@
 
     namespace Delivery\NovaPoshta;
 
-    class InternetDocuments extends Models\InternetDocument implements \Delivery\NovaPoshta\API\NovaPoshtaAPIGet, \Delivery\NovaPoshta\API\NovaPoshtaApiSUD, \Delivery\NovaPoshta\API\NovaPoshtaApiPrinting
+    class InternetDocuments extends Models\InternetDocument implements \Delivery\NovaPoshta\API\NovaPoshtaApiGet, \Delivery\NovaPoshta\API\NovaPoshtaApiSUD, \Delivery\NovaPoshta\API\NovaPoshtaApiPrinting
     {
 
         /**

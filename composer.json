@@ -1,0 +1,25 @@
+{
+  "name": "devleand/nova-poshta-api",
+  "description": "Library for integrating web applications with the service Nova Poshta",
+  "keywords": [ "delivery", "nova-poshta", "nova posta", "nova posta api", "nova-posta-api", "nova-posta-api-2" ],
+  "minimum-stability": "stable",
+  "homepage": "https://github.com/devleand/nova-poshta-api",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "devleand",
+      "email": "devleand.web@gmail.com"
+    }
+  ],
+  "support": {
+    "email": "devleand.web@gmail.com"
+  },
+  "require": {
+    "php" : ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Delivery\\": "src/"
+    }
+  }
+}

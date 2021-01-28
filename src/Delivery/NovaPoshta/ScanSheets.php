@@ -2,11 +2,11 @@
 
     namespace App\Delivery\NovaPoshta;
 
-    use Delivery\NovaPoshta\API\NovaPoshtaAPIGet;
+    use Delivery\NovaPoshta\API\NovaPoshtaApiGet;
     use Delivery\NovaPoshta\API\NovaPoshtaApiPrinting;
     use Delivery\NovaPoshta\API\NovaPoshtaApiSUD;
 
-    class ScanSheets extends Models\ScanSheet implements NovaPoshtaAPIGet, NovaPoshtaApiSUD, NovaPoshtaApiPrinting
+    class ScanSheets extends Models\ScanSheet implements NovaPoshtaApiGet, NovaPoshtaApiSUD, NovaPoshtaApiPrinting
     {
 
         /**
